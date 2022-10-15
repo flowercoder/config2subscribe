@@ -1,0 +1,1 @@
+vless://2b85c774-86e0-4bf2-ab1f-c069c5b92f5f@104.194.73.50:449?encryption=none&flow=xtls-rprx-direct&security=xtls&sni=www.nnbb.tk&type=tcp&headerType=none#104.194.73.50
