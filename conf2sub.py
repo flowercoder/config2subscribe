@@ -1,12 +1,14 @@
 
-
 import json
 import base64
 
 # input config
 # read config file and read it.
-
-file = open("config.json", "r")
+# win path
+# filepath = 'D:\PythonStudy\config2subscribe\config.json'
+# server path
+# filepath = '/usr/local/etc/xray/config.json'
+file = open('config.json', "r")
 allcontents = json.load(file)
 # Get what you need
 apart = allcontents.get('inbounds')[0].get('protocol')
