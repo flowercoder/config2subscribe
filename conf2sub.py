@@ -6,10 +6,15 @@ import base64
 # read config file and read it.
 # win path
 # filepath = 'D:\PythonStudy\config2subscribe\config.json'
+
 # server path
 # filepath = '/usr/local/etc/xray/config.json'
+# file = open(filepath, "r")
+
+# project path
 file = open('config.json', "r")
 allcontents = json.load(file)
+
 # Get what you need
 apart = allcontents.get('inbounds')[0].get('protocol')
 bpart = allcontents.get('inbounds')[0].get('settings').get('clients')[0].get('id')
@@ -36,6 +41,7 @@ file.close()
 # build a url
 url = f"{apart}://{bpart}@{cpart}:{dpart}?encryption={epart}&flow={fpart}&security={gpart}&sni={hpart}&type={ipart}#{jpart}"
 # print(url)
+
 # trans the url to subscribble content
 # tobase64
 burl = bytes(url, encoding = "utf8")
@@ -43,5 +49,6 @@ enurl = base64.urlsafe_b64encode(burl)
 deurl = base64.urlsafe_b64decode(enurl)
 # print(enurl)
 # print(deurl)
+
 # print the result on screen
 print(str(enurl)[2:-1])
