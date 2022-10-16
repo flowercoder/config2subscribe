@@ -2,13 +2,13 @@
 # input config
 # read config file and read it.
 file = open("config.json", "r")
-lineofnum = len(file.readlines())
-print(lineofnum)
-file2 = open("config.json", "r")
-for i in range(lineofnum):
-    print(file2.readline())
-file.close()
+line = file.readline()
+while line:
+    current_line = line.strip()
+    print (current_line)
+    line = file.readline()
 
+file.close()
 # Get what you need
 
 
