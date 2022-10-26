@@ -1,0 +1,31 @@
+{
+"server": "yours",
+"protocol": "udp",
+"up_mbps": 22,
+"down_mbps": 55,
+"http": {
+"listen": "127.0.0.1:10809",
+"timeout" : 300,
+"disable_udp": false
+},
+"socks5": {
+"listen": "127.0.0.1:10808",
+"timeout": 300,
+"disable_udp": false
+},
+"alpn": "h3",
+"acl": "acl/routes.acl",
+"mmdb": "acl/Country.mmdb",
+"auth_str": "yours",
+"server_name": "yours",
+"insecure": false,
+"recv_window_conn": 2097152,
+"recv_window": 8388608,
+"disable_mtu_discovery": true,
+"resolver": "https://doh.pub/dns-query",
+"retry": 3,
+"retry_interval": 3,
+"quit_on_disconnect": false,
+"handshake_timeout": 15,
+"idle_timeout": 30
+}

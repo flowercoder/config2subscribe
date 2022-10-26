@@ -9,6 +9,12 @@ import base64
 # server path
 # filepath = '/usr/local/etc/xray/config.json'
 # file = open(filepath, "r")
+
+# read Hysteria config file and read it.
+# server path
+# filepath = '/root/config.json'
+# file = open(filepath, "r")
+
 def vlessfig():
     # project path
     file = open('config.json', "r")
@@ -42,6 +48,38 @@ def vlessfig():
     # print(url)
     return url
 
+def hysteriafig():
+    file = open('config.json', "r")
+    allcontents = json.load(file)
+    # print(allcontents)
+    apart = allcontents.get('server')
+    bpart = allcontents.get('protocol')
+    cpart = allcontents.get('auth_str')
+    dpart = allcontents.get('server_name')
+    #todo if insecure == Ture, you need add some code here.
+    epart = allcontents.get('insecure')
+    if epart == False:
+        epart = 0
+    fpart = allcontents.get('up_mbps')
+    gpart = allcontents.get('down_mbps')
+    hpart = allcontents.get('alpn')
+    ipart = dpart
+
+    # print(apart)
+    # print(bpart)
+    # print(cpart)
+    # print(dpart)
+    # print(epart)
+    # print(fpart)
+    # print(gpart)
+    # print(hpart)
+    # print(ipart)
+    file.close()
+
+    url = f"hysteria://{apart}?protocol={bpart}&auth={cpart}&peer={dpart}&insecure={epart}&upmbps={fpart}&downmbps={gpart}&alpn={hpart}#{ipart}"
+    # print(url)
+    return url
+
 def showurl(url):
     # trans the url to subscribble content
     # tobase64
@@ -55,5 +93,7 @@ def showurl(url):
     print(str(enurl)[2:-1])
 
 if __name__ == '__main__':
-
-    showurl(vlessfig())
+    # vless
+    # showurl(vlessfig())
+    # Hi Hysteria
+    showurl(hysteriafig())
